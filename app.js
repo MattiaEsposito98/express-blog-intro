@@ -48,11 +48,15 @@ app.get('/', (req, res) => {
 })
 
 app.get('/bacheca', (req, res) => {
-  res.json(posts)
+  res.json({
+    count: posts.length,
+    posts: posts
+  })
 })
 
 
 app.listen(port, () => {
   console.log(`Porta in ascolto ${port}`)
 })
+
 
